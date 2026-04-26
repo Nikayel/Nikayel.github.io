@@ -229,13 +229,13 @@ figcaption {
   margin-bottom: 32px;
 }
 
-.lane-grid {
+.project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
-.lane-card {
+.project-card {
   display: grid;
   align-content: start;
   min-height: 350px;
@@ -247,22 +247,49 @@ figcaption {
   backdrop-filter: blur(18px) saturate(1.18);
 }
 
-.lane-card span {
+.project-card span {
   color: var(--accent);
   font-size: 0.78rem;
   font-weight: 750;
 }
 
-.lane-card h3 {
+.project-kicker {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 750;
+  text-transform: uppercase;
+}
+
+.project-card h3 {
   max-width: 260px;
-  margin-top: 92px;
+  margin-top: 46px;
   font-size: clamp(1.35rem, 2vw, 1.75rem);
   line-height: 1.08;
 }
 
-.lane-card p {
+.project-card p:not(.project-kicker) {
   margin: 18px 0 0;
   color: var(--muted);
+}
+
+.project-card a {
+  align-self: end;
+  justify-self: start;
+  margin-top: 34px;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.project-card-muted {
+  background: rgba(255, 255, 255, 0.48);
+  box-shadow: none;
 }
 
 .method-section {
@@ -383,7 +410,6 @@ figcaption {
   }
 
   .project-grid,
-  .lane-grid,
   .method-list {
     grid-template-columns: 1fr 1fr;
   }
@@ -406,21 +432,16 @@ figcaption {
   }
 
   .project-grid,
-  .lane-grid,
   .method-list {
     grid-template-columns: 1fr;
   }
 
-  .lane-card {
+  .project-card {
     min-height: 270px;
   }
 
-  .lane-card h3 {
-    margin-top: 58px;
-  }
-
-  .project-card {
-    min-height: 470px;
+  .project-card h3 {
+    margin-top: 34px;
   }
 
   .method-list li {
