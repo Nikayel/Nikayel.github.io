@@ -24,7 +24,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif;
+  font-family: "Avenir Next", "Helvetica Neue", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
   line-height: 1.5;
 }
 
@@ -104,9 +104,10 @@ p {
 h1 {
   margin: 0;
   max-width: 980px;
-  font-size: clamp(2.65rem, 4.1vw, 4.8rem);
-  font-weight: 450;
-  line-height: 1.16;
+  font-family: "Helvetica Neue", "Avenir Next", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  font-size: clamp(2.55rem, 3.9vw, 4.55rem);
+  font-weight: 400;
+  line-height: 1.18;
   letter-spacing: 0;
 }
 
@@ -128,8 +129,17 @@ h3 {
   max-width: 720px;
   margin: 24px 0 0;
   color: var(--muted);
-  font-size: clamp(1.05rem, 1.35vw, 1.28rem);
-  line-height: 1.42;
+  font-size: clamp(1.04rem, 1.28vw, 1.22rem);
+  font-weight: 400;
+  line-height: 1.46;
+}
+
+.hero-school {
+  margin: 16px 0 0;
+  color: var(--ink);
+  font-size: clamp(1rem, 1.15vw, 1.12rem);
+  font-weight: 400;
+  line-height: 1.45;
 }
 
 .hero-visual {
