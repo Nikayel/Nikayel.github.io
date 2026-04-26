@@ -73,14 +73,16 @@ a {
 }
 
 .hero-section {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  gap: clamp(38px, 6vw, 88px);
   align-items: center;
   min-height: 74vh;
   padding: 146px clamp(24px, 13vw, 252px) 112px;
 }
 
 .hero-copy {
-  max-width: 1120px;
+  max-width: 980px;
 }
 
 .eyebrow {
@@ -101,7 +103,7 @@ p {
 
 h1 {
   margin: 0;
-  max-width: 1120px;
+  max-width: 980px;
   font-size: clamp(2.65rem, 4.1vw, 4.8rem);
   font-weight: 450;
   line-height: 1.16;
@@ -128,6 +130,30 @@ h3 {
   color: var(--muted);
   font-size: clamp(1.05rem, 1.35vw, 1.28rem);
   line-height: 1.42;
+}
+
+.hero-visual {
+  align-self: end;
+  display: grid;
+  gap: 16px;
+  margin: 0 0 10px;
+}
+
+#signalCanvas {
+  width: 100%;
+  aspect-ratio: 1.2 / 1;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(247, 248, 252, 0.82)),
+    #ffffff;
+  border: 1px solid rgba(11, 11, 15, 0.08);
+  box-shadow: 0 28px 70px rgba(24, 24, 29, 0.08);
+}
+
+figcaption {
+  max-width: 360px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
 }
 
 .button {
@@ -383,6 +409,19 @@ h3 {
     min-height: auto;
   }
 
+  .hero-visual {
+    max-width: 440px;
+    margin-top: 8px;
+  }
+
+  #signalCanvas {
+    max-height: 260px;
+  }
+
+  figcaption {
+    max-width: 440px;
+  }
+
   .project-grid,
   .method-list {
     grid-template-columns: 1fr 1fr;
@@ -407,8 +446,20 @@ h3 {
   }
 
   .hero-section {
-    min-height: 68vh;
-    padding: 126px 24px 80px;
+    min-height: auto;
+    padding: 126px 24px 72px;
+  }
+
+  .hero-visual {
+    max-width: 100%;
+  }
+
+  #signalCanvas {
+    max-height: 190px;
+  }
+
+  figcaption {
+    font-size: 0.86rem;
   }
 
   .project-grid,
