@@ -125,10 +125,17 @@ h3 {
   letter-spacing: 0;
 }
 
-.trust-highlight {
-  display: inline;
-  padding-inline: 0.03em;
-  background: linear-gradient(180deg, transparent 68%, rgba(255, 203, 5, 0.28) 68% 91%, transparent 91%);
+.trust-cluster {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.12em;
+  align-items: baseline;
+}
+
+.trust-cluster span {
+  display: inline-block;
+  padding-inline: 0.02em;
+  background: linear-gradient(180deg, transparent 0 74%, rgba(255, 203, 5, 0.32) 74% 88%, transparent 88%);
   color: var(--ink);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
@@ -137,7 +144,7 @@ h3 {
 .hero-school {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   margin: 28px 0 0;
   color: var(--ink);
   font-size: clamp(1rem, 1.15vw, 1.12rem);
@@ -146,17 +153,10 @@ h3 {
 }
 
 .michigan-mark {
-  display: inline-grid;
-  width: 48px;
-  height: 48px;
-  place-items: center;
-  background: #ffcb05;
-  color: #00274c;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.05rem;
-  font-weight: 900;
-  line-height: 1;
-  box-shadow: 0 16px 36px rgba(0, 39, 76, 0.12);
+  width: 50px;
+  height: 36px;
+  fill: #ffcb05;
+  filter: drop-shadow(0 10px 22px rgba(0, 39, 76, 0.1));
 }
 
 .hero-visual {
