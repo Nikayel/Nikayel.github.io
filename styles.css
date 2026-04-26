@@ -103,11 +103,11 @@ p {
 
 h1 {
   margin: 0;
-  max-width: 980px;
+  max-width: 860px;
   font-family: "Helvetica Neue", "Avenir Next", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
-  font-size: clamp(2.55rem, 3.9vw, 4.55rem);
+  font-size: clamp(2.28rem, 3.35vw, 3.9rem);
   font-weight: 400;
-  line-height: 1.18;
+  line-height: 1.2;
   letter-spacing: 0;
 }
 
@@ -125,21 +125,38 @@ h3 {
   letter-spacing: 0;
 }
 
-.hero-intro {
-  max-width: 720px;
-  margin: 24px 0 0;
-  color: var(--muted);
-  font-size: clamp(1.04rem, 1.28vw, 1.22rem);
-  font-weight: 400;
-  line-height: 1.46;
+.trust-highlight {
+  display: inline;
+  padding-inline: 0.03em;
+  background: linear-gradient(180deg, transparent 68%, rgba(255, 203, 5, 0.28) 68% 91%, transparent 91%);
+  color: var(--ink);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .hero-school {
-  margin: 16px 0 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin: 28px 0 0;
   color: var(--ink);
   font-size: clamp(1rem, 1.15vw, 1.12rem);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.45;
+}
+
+.michigan-mark {
+  display: inline-grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  background: #ffcb05;
+  color: #00274c;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.05rem;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 16px 36px rgba(0, 39, 76, 0.12);
 }
 
 .hero-visual {
