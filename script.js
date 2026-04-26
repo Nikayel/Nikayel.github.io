@@ -106,3 +106,64 @@ canvas.addEventListener("pointermove", (event) => {
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 requestAnimationFrame(drawSignalMap);
+
+const orbit = document.querySelector("[data-project-orbit]");
+
+if (orbit) {
+  const cards = Array.from(orbit.querySelectorAll("[data-orbit-card]"));
+  const dots = Array.from(orbit.querySelectorAll("[data-orbit-dot]"));
+  const previousButton = orbit.querySelector("[data-orbit-prev]");
+  const nextButton = orbit.querySelector("[data-orbit-next]");
+  let activeIndex = 0;
+
+  function updateOrbit(nextIndex) {
+    activeIndex = (nextIndex + cards.length) % cards.length;
+
+    cards.forEach((card, index) => {
+      const offset = (index - activeIndex + cards.length) % cards.length;
+      card.classList.remove("is-active", "is-next", "is-prev", "is-hidden");
+      card.setAttribute("aria-hidden", offset === 0 ? "false" : "true");
+
+      if (offset === 0) {
+        card.classList.add("is-active");
+      } else if (offset === 1) {
+        card.classList.add("is-next");
+      } else if (offset === cards.length - 1) {
+        card.classList.add("is-prev");
+      } else {
+        card.classList.add("is-hidden");
+      }
+    });
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("is-active", index === activeIndex);
+    });
+  }
+
+  previousButton.addEventListener("click", () => updateOrbit(activeIndex - 1));
+  nextButton.addEventListener("click", () => updateOrbit(activeIndex + 1));
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => updateOrbit(index));
+  });
+
+  cards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+      if (index !== activeIndex) {
+        updateOrbit(index);
+      }
+    });
+  });
+
+  orbit.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      updateOrbit(activeIndex - 1);
+    }
+
+    if (event.key === "ArrowRight") {
+      updateOrbit(activeIndex + 1);
+    }
+  });
+
+  updateOrbit(activeIndex);
+}

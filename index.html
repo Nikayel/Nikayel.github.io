@@ -52,86 +52,82 @@
       <section class="content-section" id="work" aria-labelledby="work-title">
         <div class="section-heading">
           <p class="eyebrow">Projects</p>
-          <h2 id="work-title">Real work I am shaping into case studies.</h2>
+          <h2 id="work-title">Projects as research questions.</h2>
         </div>
 
-        <div class="project-grid">
-          <article class="project-card codesparring-card">
-            <div class="project-visual code-visual" aria-hidden="true">
-              <div class="code-window">
-                <div class="window-dots">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                </div>
-                <div class="code-line long"></div>
-                <div class="code-line medium"></div>
-                <div class="code-line short"></div>
-              </div>
-              <div class="sparring-orbit">
-                <span></span>
-                <span></span>
-              </div>
+        <div class="project-orbit" data-project-orbit>
+          <div class="orbit-stage" aria-live="polite">
+            <div class="orbit-core" aria-hidden="true">
+              <span>Research lens</span>
             </div>
-            <span>01</span>
-            <p class="project-kicker">AI learning experience</p>
-            <h3>Codesparring.dev</h3>
-            <p>
-              A project I am using to explore how people learn technical concepts with AI support, where confidence can
-              break, and how the interface can make practice feel safer and more useful.
-            </p>
-            <a href="https://codesparring.dev" target="_blank" rel="noreferrer">Visit project</a>
-          </article>
 
-          <article class="project-card">
-            <span>02</span>
-            <p class="project-kicker">Community product</p>
-            <h3>WatanHub.com</h3>
-            <p>
-              A project I am shaping into a user research case study around community needs, trust, information
-              architecture, and how people decide whether a platform feels credible.
-            </p>
-            <a href="https://www.watanhub.com/" target="_blank" rel="noreferrer">Visit project</a>
-          </article>
+            <article class="project-card is-active" data-orbit-card>
+              <span>01</span>
+              <p class="project-kicker">AI learning / trust calibration</p>
+              <h3>Codesparring.dev</h3>
+              <p>
+                How do learners know when to trust AI help, when to struggle, and when they are only copying an answer?
+              </p>
+              <p class="research-lens">Confidence, feedback timing, cognitive load, practice behavior.</p>
+              <a href="https://codesparring.dev" target="_blank" rel="noreferrer">Visit project</a>
+            </article>
 
-          <article class="project-card project-card-muted">
-            <span>03</span>
-            <p class="project-kicker">Next case study</p>
-            <h3>XR/VR research exploration</h3>
-            <p>
-              A future case study focused on immersive experiences: presence, comfort, onboarding, spatial interaction,
-              and how users build trust inside unfamiliar environments.
-            </p>
-          </article>
+            <article class="project-card is-next" data-orbit-card>
+              <span>02</span>
+              <p class="project-kicker">Community product / credibility</p>
+              <h3>WatanHub.com</h3>
+              <p>What makes a community platform feel useful, credible, and safe enough for people to return?</p>
+              <p class="research-lens">Information scent, belonging, credibility cues, unmet needs.</p>
+              <a href="https://www.watanhub.com/" target="_blank" rel="noreferrer">Visit project</a>
+            </article>
+
+            <article class="project-card is-prev project-card-muted" data-orbit-card>
+              <span>03</span>
+              <p class="project-kicker">Next case study / immersive UX</p>
+              <h3>XR/VR research exploration</h3>
+              <p>How do people orient, feel present, and recover from confusion inside unfamiliar spatial interfaces?</p>
+              <p class="research-lens">Presence, comfort, onboarding, spatial mental models.</p>
+            </article>
+          </div>
+
+          <div class="orbit-controls" aria-label="Project carousel controls">
+            <button type="button" data-orbit-prev aria-label="Previous project"><span>Prev</span></button>
+            <div class="orbit-dots" aria-label="Project selection">
+              <button type="button" class="is-active" data-orbit-dot aria-label="Show Codesparring.dev"></button>
+              <button type="button" data-orbit-dot aria-label="Show WatanHub.com"></button>
+              <button type="button" data-orbit-dot aria-label="Show XR/VR research exploration"></button>
+            </div>
+            <button type="button" data-orbit-next aria-label="Next project"><span>Next</span></button>
+          </div>
         </div>
       </section>
 
       <section class="content-section method-section" id="method" aria-labelledby="method-title">
         <div class="section-heading">
           <p class="eyebrow">How I work</p>
-          <h2 id="method-title">How I want my work to feel.</h2>
+          <h2 id="method-title">I look for the moment behavior changes.</h2>
         </div>
 
         <ol class="method-list">
           <li>
             <span>01</span>
-            <h3>Precise</h3>
-            <p>Start with the user, the risk, the product decision, and the evidence that would change the team’s mind.</p>
+            <h3>Reduce ambiguity</h3>
+            <p>Name the user, the decision, and what evidence would actually change the product direction.</p>
           </li>
           <li>
             <span>02</span>
-            <h3>Human</h3>
-            <p>Understand behavior in context, especially when people are confused, cautious, delighted, or overconfident.</p>
+            <h3>Watch for friction</h3>
+            <p>Pay attention to hesitation, overconfidence, workarounds, recovery, and moments of false certainty.</p>
           </li>
           <li>
             <span>03</span>
-            <h3>Clear</h3>
-            <p>Separate observations from interpretations and make the insight easy for a cross-functional team to use.</p>
+            <h3>Separate signal</h3>
+            <p>Keep observations, interpretations, and recommendations distinct so teams can trust the synthesis.</p>
           </li>
           <li>
             <span>04</span>
-            <h3>Useful</h3>
-            <p>Turn research into product language: tradeoffs, recommendations, prototypes, and next questions.</p>
+            <h3>Design the next question</h3>
+            <p>Turn findings into tradeoffs, prototypes, safeguards, or the next study the team should run.</p>
           </li>
         </ol>
       </section>
