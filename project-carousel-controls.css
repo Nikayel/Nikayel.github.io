@@ -1,6 +1,0 @@
-@media (prefers-reduced-motion: reduce) {
-  .project-case,
-  .project-link {
-    transition: none;
-  }
-}
