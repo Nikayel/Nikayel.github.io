@@ -112,17 +112,38 @@ const orbit = document.querySelector("[data-project-orbit]");
 if (orbit) {
   const cards = Array.from(orbit.querySelectorAll("[data-orbit-card]"));
   const dots = Array.from(orbit.querySelectorAll("[data-orbit-dot]"));
+  const cube = orbit.querySelector("[data-project-cube]");
+  const stage = orbit.querySelector(".orbit-stage");
   const previousButton = orbit.querySelector("[data-orbit-prev]");
   const nextButton = orbit.querySelector("[data-orbit-next]");
   let activeIndex = 0;
+  let dragStartX = null;
+  let settleTimer = null;
+  const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  function setDeckTilt(x, y) {
+    cube.style.setProperty("--drag-tilt-x", `${y.toFixed(2)}deg`);
+    cube.style.setProperty("--drag-tilt-y", `${x.toFixed(2)}deg`);
+  }
 
   function updateOrbit(nextIndex) {
+    const previousIndex = activeIndex;
     activeIndex = (nextIndex + cards.length) % cards.length;
+
+    if (!motionQuery.matches) {
+      const direction = activeIndex >= previousIndex ? 1 : -1;
+      setDeckTilt(direction * 4, -2);
+      window.clearTimeout(settleTimer);
+      settleTimer = window.setTimeout(() => {
+        setDeckTilt(0, 0);
+      }, 220);
+    }
 
     cards.forEach((card, index) => {
       const offset = (index - activeIndex + cards.length) % cards.length;
       card.classList.remove("is-active", "is-next", "is-prev", "is-hidden");
       card.setAttribute("aria-hidden", offset === 0 ? "false" : "true");
+      card.tabIndex = offset === 0 ? 0 : -1;
 
       if (offset === 0) {
         card.classList.add("is-active");
@@ -137,6 +158,7 @@ if (orbit) {
 
     dots.forEach((dot, index) => {
       dot.classList.toggle("is-active", index === activeIndex);
+      dot.setAttribute("aria-pressed", index === activeIndex ? "true" : "false");
     });
   }
 
@@ -155,12 +177,63 @@ if (orbit) {
     });
   });
 
+  stage.addEventListener("pointerdown", (event) => {
+    if (event.target.closest("a")) {
+      return;
+    }
+
+    dragStartX = event.clientX;
+    stage.classList.add("is-dragging");
+    stage.setPointerCapture(event.pointerId);
+  });
+
+  stage.addEventListener("pointerup", (event) => {
+    if (dragStartX === null) {
+      return;
+    }
+
+    const dragDistance = event.clientX - dragStartX;
+    dragStartX = null;
+    stage.classList.remove("is-dragging");
+
+    if (Math.abs(dragDistance) < 42) {
+      return;
+    }
+
+    updateOrbit(activeIndex + (dragDistance < 0 ? 1 : -1));
+  });
+
+  stage.addEventListener("pointermove", (event) => {
+    if (motionQuery.matches) {
+      return;
+    }
+
+    const rect = stage.getBoundingClientRect();
+    const normalizedX = (event.clientX - rect.left) / rect.width - 0.5;
+    const normalizedY = (event.clientY - rect.top) / rect.height - 0.5;
+    setDeckTilt(normalizedX * 7, normalizedY * -5);
+  });
+
+  stage.addEventListener("pointerleave", () => {
+    dragStartX = null;
+    stage.classList.remove("is-dragging");
+    setDeckTilt(0, 0);
+  });
+
+  stage.addEventListener("pointercancel", () => {
+    dragStartX = null;
+    stage.classList.remove("is-dragging");
+    setDeckTilt(0, 0);
+  });
+
   orbit.addEventListener("keydown", (event) => {
     if (event.key === "ArrowLeft") {
+      event.preventDefault();
       updateOrbit(activeIndex - 1);
     }
 
     if (event.key === "ArrowRight") {
+      event.preventDefault();
       updateOrbit(activeIndex + 1);
     }
   });
