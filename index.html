@@ -62,7 +62,7 @@
 
         <div class="project-showcase" data-project-showcase>
           <div class="project-spotlight" aria-live="polite">
-            <article class="project-panel is-active" data-project-panel>
+            <article class="project-panel is-active" id="project-codesparring" role="tabpanel" aria-labelledby="project-tab-codesparring" data-project-panel>
               <div class="project-panel-meta">
                 <span>01</span>
                 <span>Live product</span>
@@ -89,7 +89,7 @@
               <a class="project-link" href="https://codesparring.dev" target="_blank" rel="noreferrer">Visit project</a>
             </article>
 
-            <article class="project-panel" data-project-panel hidden>
+            <article class="project-panel" id="project-watanhub" role="tabpanel" aria-labelledby="project-tab-watanhub" data-project-panel hidden>
               <div class="project-panel-meta">
                 <span>02</span>
                 <span>Community platform</span>
@@ -114,7 +114,7 @@
               <a class="project-link" href="https://www.watanhub.com/" target="_blank" rel="noreferrer">Visit project</a>
             </article>
 
-            <article class="project-panel" data-project-panel hidden>
+            <article class="project-panel" id="project-xrvr" role="tabpanel" aria-labelledby="project-tab-xrvr" data-project-panel hidden>
               <div class="project-panel-meta">
                 <span>03</span>
                 <span>Next case study</span>
@@ -138,7 +138,7 @@
               </dl>
             </article>
 
-            <article class="project-panel" data-project-panel hidden>
+            <article class="project-panel" id="project-portfolio" role="tabpanel" aria-labelledby="project-tab-portfolio" data-project-panel hidden>
               <div class="project-panel-meta">
                 <span>04</span>
                 <span>Portfolio system</span>
@@ -164,22 +164,22 @@
           </div>
 
           <div class="project-index" role="tablist" aria-label="Projects">
-            <button class="project-tab is-active" type="button" role="tab" aria-selected="true" data-project-tab>
+            <button class="project-tab is-active" id="project-tab-codesparring" type="button" role="tab" aria-controls="project-codesparring" aria-selected="true" data-project-tab>
               <span>01</span>
               <strong>Codesparring.dev</strong>
               <small>AI learning / trust calibration</small>
             </button>
-            <button class="project-tab" type="button" role="tab" aria-selected="false" data-project-tab>
+            <button class="project-tab" id="project-tab-watanhub" type="button" role="tab" aria-controls="project-watanhub" aria-selected="false" data-project-tab>
               <span>02</span>
               <strong>WatanHub.com</strong>
               <small>Community product / credibility</small>
             </button>
-            <button class="project-tab" type="button" role="tab" aria-selected="false" data-project-tab>
+            <button class="project-tab" id="project-tab-xrvr" type="button" role="tab" aria-controls="project-xrvr" aria-selected="false" data-project-tab>
               <span>03</span>
               <strong>XR/VR exploration</strong>
               <small>Immersive UX / spatial onboarding</small>
             </button>
-            <button class="project-tab" type="button" role="tab" aria-selected="false" data-project-tab>
+            <button class="project-tab" id="project-tab-portfolio" type="button" role="tab" aria-controls="project-portfolio" aria-selected="false" data-project-tab>
               <span>04</span>
               <strong>Portfolio system</strong>
               <small>Research framing / hierarchy</small>
