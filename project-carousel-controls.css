@@ -1,5 +1,6 @@
 @media (prefers-reduced-motion: reduce) {
-  .project-tab {
+  .project-case,
+  .project-link {
     transition: none;
   }
 }
