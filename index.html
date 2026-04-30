@@ -60,90 +60,130 @@
           </p>
         </div>
 
-        <div class="project-orbit" data-project-orbit tabindex="0" aria-roledescription="3D project carousel">
-          <div class="orbit-stage" aria-live="polite" aria-label="Featured project cards">
-            <div class="project-cube" data-project-cube>
-              <article class="project-card project-face is-active" data-orbit-card aria-label="Codesparring.dev">
-                <div class="project-card-top">
-                  <span class="project-number">01</span>
-                  <span class="project-status">Live product</span>
+        <div class="project-showcase" data-project-showcase>
+          <div class="project-spotlight" aria-live="polite">
+            <article class="project-panel is-active" data-project-panel>
+              <div class="project-panel-meta">
+                <span>01</span>
+                <span>Live product</span>
+              </div>
+              <p class="project-kicker">AI learning / trust calibration</p>
+              <h3>Codesparring.dev</h3>
+              <p class="project-question">
+                How do learners know when to trust AI help, when to struggle, and when they are only copying an answer?
+              </p>
+              <dl class="project-evidence">
+                <div>
+                  <dt>Methods</dt>
+                  <dd>Think-aloud task, confidence rating, feedback timing review</dd>
                 </div>
-                <p class="project-kicker">AI learning / trust calibration</p>
-                <h3>Codesparring.dev</h3>
-                <p>
-                  How do learners know when to trust AI help, when to struggle, and when they are only copying an answer?
-                </p>
-                <ul class="research-tags" aria-label="Research methods">
-                  <li>Think-aloud task</li>
-                  <li>Confidence rating</li>
-                  <li>Feedback timing</li>
-                </ul>
-                <p class="research-lens">Confidence, feedback timing, cognitive load, practice behavior.</p>
-                <a href="https://codesparring.dev" target="_blank" rel="noreferrer">Visit project</a>
-              </article>
+                <div>
+                  <dt>Signal</dt>
+                  <dd>Confidence, cognitive load, practice behavior, help-seeking moments</dd>
+                </div>
+                <div>
+                  <dt>Decision</dt>
+                  <dd>Design AI feedback so it supports learning without replacing effort</dd>
+                </div>
+              </dl>
+              <a class="project-link" href="https://codesparring.dev" target="_blank" rel="noreferrer">Visit project</a>
+            </article>
 
-              <article class="project-card project-face is-next" data-orbit-card aria-label="WatanHub.com">
-                <div class="project-card-top">
-                  <span class="project-number">02</span>
-                  <span class="project-status">Community platform</span>
+            <article class="project-panel" data-project-panel hidden>
+              <div class="project-panel-meta">
+                <span>02</span>
+                <span>Community platform</span>
+              </div>
+              <p class="project-kicker">Community product / credibility</p>
+              <h3>WatanHub.com</h3>
+              <p class="project-question">What makes a community platform feel useful, credible, and safe enough for people to return?</p>
+              <dl class="project-evidence">
+                <div>
+                  <dt>Methods</dt>
+                  <dd>First-click test, credibility audit, return-intent prompts</dd>
                 </div>
-                <p class="project-kicker">Community product / credibility</p>
-                <h3>WatanHub.com</h3>
-                <p>What makes a community platform feel useful, credible, and safe enough for people to return?</p>
-                <ul class="research-tags" aria-label="Research methods">
-                  <li>First-click test</li>
-                  <li>Credibility audit</li>
-                  <li>Return intent</li>
-                </ul>
-                <p class="research-lens">Information scent, belonging, credibility cues, unmet needs.</p>
-                <a href="https://www.watanhub.com/" target="_blank" rel="noreferrer">Visit project</a>
-              </article>
+                <div>
+                  <dt>Signal</dt>
+                  <dd>Information scent, belonging cues, trust markers, unmet needs</dd>
+                </div>
+                <div>
+                  <dt>Decision</dt>
+                  <dd>Clarify why people should contribute before asking them to engage</dd>
+                </div>
+              </dl>
+              <a class="project-link" href="https://www.watanhub.com/" target="_blank" rel="noreferrer">Visit project</a>
+            </article>
 
-              <article class="project-card project-face is-hidden" data-orbit-card aria-label="XR/VR research exploration">
-                <div class="project-card-top">
-                  <span class="project-number">03</span>
-                  <span class="project-status">Next case study</span>
+            <article class="project-panel" data-project-panel hidden>
+              <div class="project-panel-meta">
+                <span>03</span>
+                <span>Next case study</span>
+              </div>
+              <p class="project-kicker">Immersive UX / spatial onboarding</p>
+              <h3>XR/VR research exploration</h3>
+              <p class="project-question">How do people orient, feel present, and recover from confusion inside unfamiliar spatial interfaces?</p>
+              <dl class="project-evidence">
+                <div>
+                  <dt>Methods</dt>
+                  <dd>Spatial walkthrough, comfort check, recovery-path mapping</dd>
                 </div>
-                <p class="project-kicker">Next case study / immersive UX</p>
-                <h3>XR/VR research exploration</h3>
-                <p>How do people orient, feel present, and recover from confusion inside unfamiliar spatial interfaces?</p>
-                <ul class="research-tags" aria-label="Research methods">
-                  <li>Spatial walkthrough</li>
-                  <li>Comfort check</li>
-                  <li>Recovery path</li>
-                </ul>
-                <p class="research-lens">Presence, comfort, onboarding, spatial mental models.</p>
-              </article>
+                <div>
+                  <dt>Signal</dt>
+                  <dd>Presence, motion comfort, onboarding clarity, spatial mental models</dd>
+                </div>
+                <div>
+                  <dt>Decision</dt>
+                  <dd>Use orientation cues that lower anxiety without flattening immersion</dd>
+                </div>
+              </dl>
+            </article>
 
-              <article class="project-card project-face is-prev" data-orbit-card aria-label="Research portfolio system">
-                <div class="project-card-top">
-                  <span class="project-number">04</span>
-                  <span class="project-status">Portfolio system</span>
+            <article class="project-panel" data-project-panel hidden>
+              <div class="project-panel-meta">
+                <span>04</span>
+                <span>Portfolio system</span>
+              </div>
+              <p class="project-kicker">Portfolio / research framing</p>
+              <h3>Research portfolio system</h3>
+              <p class="project-question">How can a personal site show product judgment, research taste, and technical craft without feeling crowded?</p>
+              <dl class="project-evidence">
+                <div>
+                  <dt>Methods</dt>
+                  <dd>Five-second test, story clarity pass, recruiter scan review</dd>
                 </div>
-                <p class="project-kicker">Portfolio / research framing</p>
-                <h3>Research portfolio system</h3>
-                <p>How can a personal site show product judgment, research taste, and technical craft without feeling crowded?</p>
-                <ul class="research-tags" aria-label="Research methods">
-                  <li>Five-second test</li>
-                  <li>Story clarity</li>
-                  <li>Recruiter scan</li>
-                </ul>
-                <p class="research-lens">Narrative design, interaction polish, accessibility, visual hierarchy.</p>
-              </article>
-            </div>
+                <div>
+                  <dt>Signal</dt>
+                  <dd>Narrative design, interaction polish, accessibility, visual hierarchy</dd>
+                </div>
+                <div>
+                  <dt>Decision</dt>
+                  <dd>Lead with the question and let the interface reveal depth on demand</dd>
+                </div>
+              </dl>
+            </article>
           </div>
 
-          <p class="orbit-instruction">Drag, use arrow keys, or select a card to rotate the research deck.</p>
-
-          <div class="orbit-controls" aria-label="Project carousel controls">
-            <button type="button" data-orbit-prev aria-label="Previous project"><span>Prev</span></button>
-            <div class="orbit-dots" aria-label="Project selection">
-              <button type="button" class="is-active" data-orbit-dot aria-label="Show Codesparring.dev"></button>
-              <button type="button" data-orbit-dot aria-label="Show WatanHub.com"></button>
-              <button type="button" data-orbit-dot aria-label="Show XR/VR research exploration"></button>
-              <button type="button" data-orbit-dot aria-label="Show research portfolio system"></button>
-            </div>
-            <button type="button" data-orbit-next aria-label="Next project"><span>Next</span></button>
+          <div class="project-index" role="tablist" aria-label="Projects">
+            <button class="project-tab is-active" type="button" role="tab" aria-selected="true" data-project-tab>
+              <span>01</span>
+              <strong>Codesparring.dev</strong>
+              <small>AI learning / trust calibration</small>
+            </button>
+            <button class="project-tab" type="button" role="tab" aria-selected="false" data-project-tab>
+              <span>02</span>
+              <strong>WatanHub.com</strong>
+              <small>Community product / credibility</small>
+            </button>
+            <button class="project-tab" type="button" role="tab" aria-selected="false" data-project-tab>
+              <span>03</span>
+              <strong>XR/VR exploration</strong>
+              <small>Immersive UX / spatial onboarding</small>
+            </button>
+            <button class="project-tab" type="button" role="tab" aria-selected="false" data-project-tab>
+              <span>04</span>
+              <strong>Portfolio system</strong>
+              <small>Research framing / hierarchy</small>
+            </button>
           </div>
         </div>
       </section>

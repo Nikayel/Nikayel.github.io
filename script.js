@@ -107,136 +107,49 @@ window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 requestAnimationFrame(drawSignalMap);
 
-const orbit = document.querySelector("[data-project-orbit]");
+const projectShowcase = document.querySelector("[data-project-showcase]");
 
-if (orbit) {
-  const cards = Array.from(orbit.querySelectorAll("[data-orbit-card]"));
-  const dots = Array.from(orbit.querySelectorAll("[data-orbit-dot]"));
-  const cube = orbit.querySelector("[data-project-cube]");
-  const stage = orbit.querySelector(".orbit-stage");
-  const previousButton = orbit.querySelector("[data-orbit-prev]");
-  const nextButton = orbit.querySelector("[data-orbit-next]");
-  let activeIndex = 0;
-  let dragStartX = null;
-  let settleTimer = null;
-  const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+if (projectShowcase) {
+  const panels = Array.from(projectShowcase.querySelectorAll("[data-project-panel]"));
+  const tabs = Array.from(projectShowcase.querySelectorAll("[data-project-tab]"));
+  let activeProject = 0;
 
-  function setDeckTilt(x, y) {
-    cube.style.setProperty("--drag-tilt-x", `${y.toFixed(2)}deg`);
-    cube.style.setProperty("--drag-tilt-y", `${x.toFixed(2)}deg`);
-  }
+  function setActiveProject(nextIndex, shouldFocus = false) {
+    activeProject = (nextIndex + panels.length) % panels.length;
 
-  function updateOrbit(nextIndex) {
-    const previousIndex = activeIndex;
-    activeIndex = (nextIndex + cards.length) % cards.length;
+    panels.forEach((panel, index) => {
+      const isActive = index === activeProject;
+      panel.hidden = !isActive;
+      panel.classList.toggle("is-active", isActive);
+    });
 
-    if (!motionQuery.matches) {
-      const direction = activeIndex >= previousIndex ? 1 : -1;
-      setDeckTilt(direction * 4, -2);
-      window.clearTimeout(settleTimer);
-      settleTimer = window.setTimeout(() => {
-        setDeckTilt(0, 0);
-      }, 220);
+    tabs.forEach((tab, index) => {
+      const isActive = index === activeProject;
+      tab.classList.toggle("is-active", isActive);
+      tab.setAttribute("aria-selected", isActive ? "true" : "false");
+      tab.tabIndex = isActive ? 0 : -1;
+    });
+
+    if (shouldFocus) {
+      tabs[activeProject].focus();
     }
-
-    cards.forEach((card, index) => {
-      const offset = (index - activeIndex + cards.length) % cards.length;
-      card.classList.remove("is-active", "is-next", "is-prev", "is-hidden");
-      card.setAttribute("aria-hidden", offset === 0 ? "false" : "true");
-      card.tabIndex = offset === 0 ? 0 : -1;
-
-      if (offset === 0) {
-        card.classList.add("is-active");
-      } else if (offset === 1) {
-        card.classList.add("is-next");
-      } else if (offset === cards.length - 1) {
-        card.classList.add("is-prev");
-      } else {
-        card.classList.add("is-hidden");
-      }
-    });
-
-    dots.forEach((dot, index) => {
-      dot.classList.toggle("is-active", index === activeIndex);
-      dot.setAttribute("aria-pressed", index === activeIndex ? "true" : "false");
-    });
   }
 
-  previousButton.addEventListener("click", () => updateOrbit(activeIndex - 1));
-  nextButton.addEventListener("click", () => updateOrbit(activeIndex + 1));
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => setActiveProject(index));
 
-  dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => updateOrbit(index));
-  });
+    tab.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowDown" || event.key === "ArrowRight") {
+        event.preventDefault();
+        setActiveProject(activeProject + 1, true);
+      }
 
-  cards.forEach((card, index) => {
-    card.addEventListener("click", () => {
-      if (index !== activeIndex) {
-        updateOrbit(index);
+      if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
+        event.preventDefault();
+        setActiveProject(activeProject - 1, true);
       }
     });
   });
 
-  stage.addEventListener("pointerdown", (event) => {
-    if (event.target.closest("a")) {
-      return;
-    }
-
-    dragStartX = event.clientX;
-    stage.classList.add("is-dragging");
-    stage.setPointerCapture(event.pointerId);
-  });
-
-  stage.addEventListener("pointerup", (event) => {
-    if (dragStartX === null) {
-      return;
-    }
-
-    const dragDistance = event.clientX - dragStartX;
-    dragStartX = null;
-    stage.classList.remove("is-dragging");
-
-    if (Math.abs(dragDistance) < 42) {
-      return;
-    }
-
-    updateOrbit(activeIndex + (dragDistance < 0 ? 1 : -1));
-  });
-
-  stage.addEventListener("pointermove", (event) => {
-    if (motionQuery.matches) {
-      return;
-    }
-
-    const rect = stage.getBoundingClientRect();
-    const normalizedX = (event.clientX - rect.left) / rect.width - 0.5;
-    const normalizedY = (event.clientY - rect.top) / rect.height - 0.5;
-    setDeckTilt(normalizedX * 7, normalizedY * -5);
-  });
-
-  stage.addEventListener("pointerleave", () => {
-    dragStartX = null;
-    stage.classList.remove("is-dragging");
-    setDeckTilt(0, 0);
-  });
-
-  stage.addEventListener("pointercancel", () => {
-    dragStartX = null;
-    stage.classList.remove("is-dragging");
-    setDeckTilt(0, 0);
-  });
-
-  orbit.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowLeft") {
-      event.preventDefault();
-      updateOrbit(activeIndex - 1);
-    }
-
-    if (event.key === "ArrowRight") {
-      event.preventDefault();
-      updateOrbit(activeIndex + 1);
-    }
-  });
-
-  updateOrbit(activeIndex);
+  setActiveProject(activeProject);
 }
