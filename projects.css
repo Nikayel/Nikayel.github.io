@@ -3,6 +3,7 @@
   color: #f6f4ef;
   overflow: hidden;
   padding-block: 5rem;
+  padding-inline: clamp(24px, 13vw, 252px);
 }
 
 #work .section-heading {
@@ -27,7 +28,7 @@
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.85fr);
   gap: clamp(36px, 7vw, 88px);
-  align-items: center;
+  align-items: start;
   padding: clamp(46px, 7vw, 76px) 0;
   border-bottom: 1px solid rgba(246, 244, 239, 0.14);
 }
@@ -54,10 +55,11 @@
   max-width: 720px;
   margin: 0;
   color: #ffffff;
+  font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, "Noto Serif", Georgia, serif;
   font-size: clamp(2.35rem, 4.3vw, 4.15rem);
-  font-weight: 650;
+  font-weight: 600;
   line-height: 0.98;
-  letter-spacing: 0;
+  letter-spacing: -0.02em;
 }
 
 .project-main h3 span {
@@ -78,25 +80,28 @@
 
 .project-note {
   max-width: 500px;
-  margin-top: 24px;
-  padding-left: 18px;
-  border-left: 1px solid rgba(246, 244, 239, 0.28);
+  margin-top: 28px;
+  padding: 16px 18px 18px 20px;
+  border-left: 2px solid rgba(255, 190, 11, 0.5);
+  border-left: 2px solid color-mix(in srgb, var(--maize) 55%, transparent);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0 8px 8px 0;
 }
 
 .project-note span {
-  color: rgba(246, 244, 239, 0.5);
-  font-size: 0.72rem;
+  color: rgba(246, 244, 239, 0.72);
+  font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .project-note p {
-  margin: 10px 0 0;
-  color: rgba(246, 244, 239, 0.74);
-  font-size: 0.96rem;
-  font-weight: 650;
-  line-height: 1.6;
+  margin: 12px 0 0;
+  color: rgba(246, 244, 239, 0.78);
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.62;
 }
 
 .project-actions {
@@ -123,11 +128,13 @@
 }
 
 .project-preview {
+  position: sticky;
+  top: 72px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(246, 244, 239, 0.18);
   border-radius: 8px;
-  box-shadow: none;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
 }
 
 .preview-chrome {
@@ -189,9 +196,11 @@
 .watan-preview h4 {
   margin: 0;
   color: #ffffff;
+  font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, "Noto Serif", Georgia, serif;
   font-size: clamp(1.9rem, 3vw, 2.85rem);
-  font-weight: 650;
+  font-weight: 600;
   line-height: 1;
+  letter-spacing: -0.02em;
 }
 
 .watan-preview .preview-body > p {
@@ -255,7 +264,9 @@
   }
 
   .project-preview {
+    position: static;
     max-width: 520px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
   }
 }
 

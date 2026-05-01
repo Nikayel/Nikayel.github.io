@@ -294,10 +294,6 @@ figcaption {
   margin-bottom: 42px;
 }
 
-#work {
-  padding-top: clamp(72px, 8vw, 108px);
-}
-
 .method-section {
   background: #1d1d1a;
   color: #f6f4ef;
