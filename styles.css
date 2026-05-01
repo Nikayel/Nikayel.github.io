@@ -239,45 +239,60 @@ figcaption {
   background: #ffffff;
 }
 
-.method-list {
+.evidence-board {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  max-width: 980px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 1040px;
   border-top: 1px solid rgba(11, 11, 15, 0.1);
-  background: transparent;
 }
 
-.method-list li {
+.evidence-item {
   display: grid;
-  grid-template-columns: 70px minmax(150px, 0.34fr) minmax(0, 1fr);
-  gap: 24px;
-  align-items: baseline;
-  min-height: auto;
-  padding: 24px 0;
-  background: transparent;
+  align-content: start;
+  min-height: 250px;
+  padding: clamp(22px, 3vw, 32px);
   border-bottom: 1px solid rgba(11, 11, 15, 0.1);
 }
 
-.method-list span {
-  color: var(--violet);
-  font-size: 0.8rem;
+.evidence-item:nth-child(odd) {
+  border-right: 1px solid rgba(11, 11, 15, 0.1);
+}
+
+.evidence-item span {
+  color: var(--accent);
+  font-size: 0.74rem;
   font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
-.method-list h3 {
-  margin-top: 0;
-  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+.evidence-item h3 {
+  max-width: 360px;
+  margin: 42px 0 0;
+  font-size: clamp(1.35rem, 2vw, 2rem);
   font-weight: 500;
+  line-height: 1.08;
 }
 
-.method-list p {
-  margin: 0;
+.evidence-item p {
+  max-width: 440px;
+  margin: 16px 0 0;
   color: #555b63;
   line-height: 1.55;
+}
+
+.evidence-item a {
+  justify-self: start;
+  margin-top: 22px;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.evidence-item a:hover,
+.evidence-item a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .about-section {
@@ -365,12 +380,12 @@ figcaption {
     max-width: 440px;
   }
 
-  .method-list li {
-    grid-template-columns: 54px minmax(0, 1fr);
+  .evidence-board {
+    grid-template-columns: 1fr;
   }
 
-  .method-list p {
-    grid-column: 2;
+  .evidence-item:nth-child(odd) {
+    border-right: 0;
   }
 }
 
@@ -408,9 +423,12 @@ figcaption {
     font-size: 0.86rem;
   }
 
-  .method-list li {
-    grid-template-columns: 42px minmax(0, 1fr);
-    gap: 16px;
+  .evidence-item {
     min-height: auto;
+    padding-inline: 0;
+  }
+
+  .evidence-item h3 {
+    margin-top: 28px;
   }
 }
