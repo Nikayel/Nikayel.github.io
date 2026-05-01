@@ -16,9 +16,7 @@
       <a class="brand" href="#top" aria-label="Nikayel Jamal home">Nikayel Jamal</a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#work">Work</a>
-        <span aria-hidden="true">|</span>
         <a href="https://www.linkedin.com/in/nikayel-ali-162812221/?skipRedirect=true" target="_blank" rel="noreferrer">LinkedIn</a>
-        <span aria-hidden="true">|</span>
         <a href="#about">About</a>
       </nav>
     </header>
@@ -35,15 +33,54 @@
             </span>
           </h1>
           <p class="hero-school">
-            Currently @ University of Michigan
+            MSI ’28 <span aria-hidden="true">·</span> University of Michigan
             <svg class="michigan-mark" viewBox="0 0 120 84" aria-hidden="true" focusable="false">
               <path d="M4 0h36l20 35L80 0h36v20h-10v44h10v20H72V64h8V32L60 70 40 32v32h8v20H4V64h10V20H4z"></path>
             </svg>
           </p>
         </div>
 
-        <figure class="hero-visual" aria-label="Interactive trust and research map">
-          <canvas id="signalCanvas" width="560" height="430"></canvas>
+        <figure class="hero-visual" aria-label="Trust and research map">
+          <svg class="trust-map" viewBox="0 0 360 310" role="img" aria-labelledby="trust-map-title trust-map-desc">
+            <title id="trust-map-title">Trust research map</title>
+            <desc id="trust-map-desc">Six related concepts arranged evenly around trust.</desc>
+            <g class="trust-lines">
+              <line x1="180" y1="155" x2="180" y2="54"></line>
+              <line x1="180" y1="155" x2="268" y2="104"></line>
+              <line x1="180" y1="155" x2="268" y2="206"></line>
+              <line x1="180" y1="155" x2="180" y2="256"></line>
+              <line x1="180" y1="155" x2="92" y2="206"></line>
+              <line x1="180" y1="155" x2="92" y2="104"></line>
+            </g>
+            <g class="trust-node trust-node-center">
+              <circle cx="180" cy="155" r="34"></circle>
+              <text x="180" y="159">Trust</text>
+            </g>
+            <g class="trust-node node-top">
+              <circle cx="180" cy="54" r="6"></circle>
+              <text x="180" y="31">Safety</text>
+            </g>
+            <g class="trust-node node-right">
+              <circle cx="268" cy="104" r="6"></circle>
+              <text x="292" y="108">Presence</text>
+            </g>
+            <g class="trust-node node-right">
+              <circle cx="268" cy="206" r="6"></circle>
+              <text x="292" y="210">Behavior</text>
+            </g>
+            <g class="trust-node node-bottom">
+              <circle cx="180" cy="256" r="6"></circle>
+              <text x="180" y="288">Evidence</text>
+            </g>
+            <g class="trust-node node-left">
+              <circle cx="92" cy="206" r="6"></circle>
+              <text x="68" y="210">Decision</text>
+            </g>
+            <g class="trust-node node-left">
+              <circle cx="92" cy="104" r="6"></circle>
+              <text x="68" y="108">Usefulness</text>
+            </g>
+          </svg>
           <figcaption>
             My lane sits between human behavior, technical systems, and the moments where trust is earned or lost.
           </figcaption>
@@ -53,10 +90,10 @@
       <section class="content-section" id="work" aria-labelledby="work-title">
         <div class="section-heading">
           <p class="eyebrow">Projects</p>
-          <h2 id="work-title">Projects and hobbies.</h2>
+          <h2 id="work-title">Selected work.</h2>
         </div>
 
-        <div class="project-board" aria-label="Projects and hobbies">
+        <div class="project-board" aria-label="Selected work">
           <article class="project-brief project-brief-primary">
             <div class="project-main">
               <p class="project-kicker">01 / AI mock interview practice</p>
@@ -147,7 +184,7 @@
       <section class="content-section method-section" id="method" aria-labelledby="method-title">
         <div class="section-heading">
           <p class="eyebrow">What people notice</p>
-          <h2 id="method-title">Trusted in the messy, human parts of the work.</h2>
+          <h2 id="method-title">Trusted in the <em>messy, human</em> parts of the work.</h2>
         </div>
 
         <div class="reference-panel" aria-label="Selected recommendations">
@@ -157,38 +194,27 @@
             </blockquote>
             <figcaption>
               <strong>Hasibullah Banaiee</strong>
-              <span>In-School Youth Specialist, International Rescue Committee</span>
+              <span>In-School Youth Specialist · International Rescue Committee</span>
+              <small>Worked together through Watan Youth Group, Highlands Community Charter, and Seeds of Hope. His recommendation also highlights Nikayel’s work helping students navigate resources and language support.</small>
             </figcaption>
-            <p>
-              Worked with Nikayel through Watan Youth Group, Highlands Community Charter, and the Seeds of Hope Online College Application Workshop for female Afghan high school students.
-            </p>
           </figure>
 
-          <div class="reference-stack">
-            <figure class="reference-quote">
-              <blockquote>
-                “Helping students navigate community resources and provide language support.”
-              </blockquote>
-              <figcaption>
-                <strong>Hasibullah Banaiee</strong>
-                <span>Recommendation on community support and mentorship</span>
-              </figcaption>
-            </figure>
-
-            <figure class="reference-quote">
-              <blockquote>
-                “His contributions were invaluable.”
-              </blockquote>
-              <figcaption>
-                <strong>Ali Almahbashi</strong>
-                <span>Operations and technical support colleague</span>
-              </figcaption>
-            </figure>
-
-            <a class="reference-link" href="https://www.linkedin.com/in/nikayel-ali-162812221/?skipRedirect=true" target="_blank" rel="noreferrer">
-              Read more on LinkedIn
-            </a>
-          </div>
+          <figure class="reference-quote">
+            <blockquote>
+              “His contributions were invaluable. He consistently provided guidance and support.”
+            </blockquote>
+            <figcaption>
+              <strong>Ali Almahbashi</strong>
+              <span>Operations and technical support colleague</span>
+              <small>Peer recommendation on support, collaboration, and professional reliability.</small>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="reference-footer">
+          <a class="reference-link" href="https://www.linkedin.com/in/nikayel-ali-162812221/?skipRedirect=true" target="_blank" rel="noreferrer">
+            Read more on LinkedIn
+          </a>
+          <span>Selected excerpts from LinkedIn recommendations</span>
         </div>
       </section>
 
@@ -224,6 +250,5 @@
         </a>
       </section>
     </main>
-    <script src="script.js"></script>
   </body>
 </html>

@@ -1,6 +1,7 @@
 #work {
-  background: #f7f8fb;
+  background: var(--paper);
   overflow: hidden;
+  padding-block: 5rem;
 }
 
 #work .section-heading {
@@ -9,7 +10,7 @@
 }
 
 #work h2 {
-  font-size: clamp(2rem, 3.6vw, 3.65rem);
+  font-size: clamp(2rem, 3.6vw, 3.6rem);
 }
 
 .project-board {
