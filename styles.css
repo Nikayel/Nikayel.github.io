@@ -239,60 +239,86 @@ figcaption {
   background: #ffffff;
 }
 
-.evidence-board {
+.reference-panel {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 1040px;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.52fr);
+  gap: clamp(18px, 3vw, 32px);
+  max-width: 1080px;
   border-top: 1px solid rgba(11, 11, 15, 0.1);
 }
 
-.evidence-item {
+.reference-quote {
   display: grid;
   align-content: start;
-  min-height: 250px;
+  margin: 0;
   padding: clamp(22px, 3vw, 32px);
+  background: #ffffff;
   border-bottom: 1px solid rgba(11, 11, 15, 0.1);
 }
 
-.evidence-item:nth-child(odd) {
+.reference-quote-primary {
+  min-height: 420px;
   border-right: 1px solid rgba(11, 11, 15, 0.1);
 }
 
-.evidence-item span {
-  color: var(--accent);
-  font-size: 0.74rem;
-  font-weight: 800;
-  letter-spacing: 0;
-  text-transform: uppercase;
+.reference-quote blockquote {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.22rem, 2.2vw, 2.35rem);
+  font-weight: 400;
+  line-height: 1.14;
 }
 
-.evidence-item h3 {
-  max-width: 360px;
-  margin: 42px 0 0;
-  font-size: clamp(1.35rem, 2vw, 2rem);
-  font-weight: 500;
-  line-height: 1.08;
+.reference-quote:not(.reference-quote-primary) blockquote {
+  font-size: clamp(1.08rem, 1.5vw, 1.34rem);
+  line-height: 1.24;
 }
 
-.evidence-item p {
-  max-width: 440px;
-  margin: 16px 0 0;
+.reference-quote figcaption {
+  display: grid;
+  gap: 4px;
+  margin-top: clamp(28px, 5vw, 74px);
+}
+
+.reference-quote strong {
+  font-size: 0.98rem;
+  font-weight: 750;
+}
+
+.reference-quote span,
+.reference-quote p {
+  max-width: 620px;
   color: #555b63;
-  line-height: 1.55;
+  font-size: 0.94rem;
+  line-height: 1.5;
 }
 
-.evidence-item a {
+.reference-quote p {
+  margin: 26px 0 0;
+}
+
+.reference-stack {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  padding-top: clamp(22px, 3vw, 32px);
+}
+
+.reference-link {
+  display: inline-flex;
   justify-self: start;
-  margin-top: 22px;
-  color: var(--accent);
-  font-weight: 700;
+  align-items: center;
+  min-height: 42px;
+  padding: 10px 14px;
+  background: var(--ink);
+  color: #ffffff;
+  font-weight: 750;
   text-decoration: none;
 }
 
-.evidence-item a:hover,
-.evidence-item a:focus-visible {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.reference-link:hover,
+.reference-link:focus-visible {
+  background: var(--accent);
 }
 
 .about-section {
@@ -380,11 +406,11 @@ figcaption {
     max-width: 440px;
   }
 
-  .evidence-board {
+  .reference-panel {
     grid-template-columns: 1fr;
   }
 
-  .evidence-item:nth-child(odd) {
+  .reference-quote-primary {
     border-right: 0;
   }
 }
@@ -423,12 +449,12 @@ figcaption {
     font-size: 0.86rem;
   }
 
-  .evidence-item {
+  .reference-quote {
     min-height: auto;
     padding-inline: 0;
   }
 
-  .evidence-item h3 {
-    margin-top: 28px;
+  .reference-stack {
+    padding-top: 0;
   }
 }
