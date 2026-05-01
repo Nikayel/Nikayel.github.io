@@ -470,9 +470,26 @@ figcaption {
   max-width: 900px;
 }
 
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
 .contact-section .button {
-  justify-self: start;
   border-color: rgba(255, 255, 255, 0.16);
+}
+
+.contact-section .button.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.contact-section .button.secondary:hover,
+.contact-section .button.secondary:focus-visible {
+  border-color: rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.14);
 }
 
 @media (max-width: 980px) {
