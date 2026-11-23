@@ -61,7 +61,10 @@
           animation.then(() => animations.delete(animation));
         }
       }, { threshold: 0.08 });
-      for (const section of sections) observer.observe(section);
+      // Sections already on screen stay put, so nothing flickers when Motion arrives.
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top > window.innerHeight) observer.observe(section);
+      }
     })
     .catch(() => { /* Native navigation and all content remain available offline. */ });
 })();

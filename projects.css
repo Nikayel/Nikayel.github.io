@@ -304,7 +304,8 @@
 }
 
 .case-entry-title > span { color: var(--maize); }
-.case-entry-action { font-size: 0.82rem; }
+.case-entry-summary { grid-column: 1; max-width: 520px; color: rgba(246, 244, 239, 0.75); font-size: 0.95rem; line-height: 1.55; }
+.case-entry-action { grid-column: 2; grid-row: 2; font-size: 0.82rem; }
 .case-entry-action > span { margin-left: 14px; }
 .case-study-entry:hover .case-entry-action { color: var(--maize); text-decoration: underline; text-underline-offset: 5px; }
 .case-study-entry:focus-visible { outline: 2px solid var(--maize); outline-offset: 8px; }
@@ -314,5 +315,5 @@
   .site-header .brand { font-size: 12px; }
   .site-header .nav-links { gap: 10px; font-size: 11px; }
   .case-study-entry { grid-template-columns: 1fr; }
-  .case-entry-number { grid-column: auto; }
+  .case-entry-number, .case-entry-summary, .case-entry-action { grid-column: auto; grid-row: auto; }
 }
