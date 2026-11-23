@@ -3,169 +3,358 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Pilet — a product case study by Nikayel Jamal. Customer discovery, product decisions, design, and reflection.">
+    <meta name="description" content="Pilet: a product case study by Nikayel Jamal. How I led product for an iOS app for creative projects, from an open problem space to tested assumptions.">
     <title>Pilet — Case Study · Nikayel Jamal</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="case-study.css">
     <script src="case-study.js" defer></script>
   </head>
   <body class="case-page">
-    <a class="skip-link" href="#case-content">Skip to case study</a>
+    <a class="skip-link" href="#top">Skip to case study</a>
     <header class="site-header case-header">
       <a class="brand" href="index.html" aria-label="Nikayel Jamal home">Nikayel Jamal</a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="index.html#work">Work</a>
         <a href="case-study.html" aria-current="page">Case Study</a>
+        <a href="https://www.linkedin.com/in/nikayel-ali-162812221/?skipRedirect=true" target="_blank" rel="noreferrer">LinkedIn</a>
         <a href="index.html#about">About</a>
       </nav>
     </header>
 
-    <main id="top" class="case-shell">
+    <main id="top" class="case-shell" tabindex="-1">
+      <!-- HERO: one-line summary, role, team, timeline, tools -->
       <header class="case-hero">
         <a class="back-link" href="index.html#work"><span aria-hidden="true">←</span> Selected work</a>
-        <div class="case-hero-heading">
-          <div>
-            <p class="case-eyebrow">Product case study <span aria-hidden="true">/</span> 01</p>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="case-eyebrow">Product case study <span aria-hidden="true">/</span> SI 511, University of Michigan</p>
             <h1>Pilet<span class="title-period">.</span></h1>
+            <p class="hero-summary">An iOS app that gives each creative project its own “pile” of references. As product manager, I took it from an open problem space to three tested assumptions in one semester.</p>
           </div>
-          <p class="case-deck">From the first question<br>to the final concept.</p>
+
+          <!-- Signature: a pile of mixed-media references, the product's core idea. Decorative. -->
+          <div class="hero-pile" aria-hidden="true">
+            <div class="pile-card card-film">
+              <span class="card-poster"></span>
+              <span class="card-kind">Film</span>
+              <span class="card-title">Annihilation</span>
+              <span class="card-meta">2018 · Letterboxd</span>
+            </div>
+            <div class="pile-card card-song">
+              <span class="card-art"></span>
+              <span><span class="card-kind">Song</span><span class="card-title">Slow-burn track</span><span class="card-meta">Spotify</span></span>
+            </div>
+            <div class="pile-card card-palette">
+              <span class="card-kind">Palette</span>
+              <span class="swatches"><i></i><i></i><i></i><i></i></span>
+            </div>
+            <div class="pile-card card-note">
+              <span class="card-kind">Note</span>
+              <span class="card-quote">“the hallway should feel like a held breath”</span>
+            </div>
+            <div class="pile-card card-link">
+              <span class="card-kind">Link</span>
+              <span class="card-title">Liminal space</span>
+              <span class="card-meta">wikipedia.org</span>
+            </div>
+            <span class="pile-tape"></span>
+          </div>
         </div>
-        <div class="case-hero-bottom">
-          <p class="draft-note"><span aria-hidden="true"></span> A work in progress</p>
-          <a class="text-link" href="#what-is-pilet">Explore the case study <span aria-hidden="true">↓</span></a>
-        </div>
+
+        <dl class="hero-facts">
+          <div><dt>My role</dt><dd>Product Manager</dd></div>
+          <div><dt>Team</dt><dd>Team Saturday: Orion, Saran Ramesh, and me<!-- Add remaining teammates --></dd></div>
+          <div><dt>Timeline</dt><dd>Oct – Nov 2026</dd></div>
+          <div><dt>Tools</dt><dd>FigJam, iOS TestFlight build, Google Docs, ChatGPT</dd></div>
+        </dl>
       </header>
+
+      <!-- The 30-second read for a recruiter. -->
+      <section class="tldr" aria-labelledby="tldr-title">
+        <h2 id="tldr-title" class="case-eyebrow">The short version</h2>
+        <ul class="tldr-grid">
+          <li><span class="tldr-label">Problem</span><p>Creative students save references across a dozen apps, then can’t get back inside a project when it’s time to make it.</p></li>
+          <li><span class="tldr-label">What I did</span><p>Set the research plan, synthesized three interviews, mapped 26 assumptions, and chose the three riskiest to test.</p></li>
+          <li><span class="tldr-label">Key decision</span><p>Narrowed the user to mixed-media creatives with an active project, and put sharing on hold until the evidence supported it.</p></li>
+          <li><span class="tldr-label">Result</span><p>Capture worked: 42 of 42 saves succeeded. Privacy did not: no tester could tell a pile was private. Adoption is still unproven.</p></li>
+        </ul>
+      </section>
+
+      <!-- DEMO: paste this video inside the figure below, then remove its hidden attribute.
+           <video controls preload="metadata" playsinline poster="assets/pilet-demo-poster.webp" width="1280" height="720">
+             <source src="assets/pilet-demo.mp4" type="video/mp4">
+             <track kind="captions" src="assets/pilet-demo.vtt" srclang="en" label="English">
+           </video> -->
+      <figure class="case-figure demo-figure" hidden>
+        <figcaption><span>Demo</span> A walkthrough of the problem and the product</figcaption>
+      </figure>
 
       <div class="case-layout">
         <aside class="case-sidebar">
           <nav class="chapter-nav" aria-label="Case study contents">
-            <p class="case-eyebrow">In this case study</p>
+            <p class="case-eyebrow">Contents</p>
             <ol>
-              <li><a href="#what-is-pilet" aria-current="location"><span>01</span> Overview</a></li>
-              <li><a href="#where-we-started"><span>02</span> The starting point</a></li>
-              <li><a href="#customer-discovery"><span>03</span> Customer discovery</a></li>
-              <li><a href="#what-we-learned"><span>04</span> Learning &amp; changes</a></li>
-              <li><a href="#what-we-built"><span>05</span> Design &amp; build</a></li>
-              <li><a href="#testing-outcomes"><span>06</span> Testing &amp; outcomes</a></li>
-              <li><a href="#contributions"><span>07</span> My reflections</a></li>
+              <li><a href="#problem" aria-current="location"><span>01</span> Problem</a></li>
+              <li><a href="#research"><span>02</span> Research</a></li>
+              <li><a href="#decisions"><span>03</span> Decisions</a></li>
+              <li><a href="#solution"><span>04</span> Solution</a></li>
+              <li><a href="#testing"><span>05</span> Testing</a></li>
+              <li><a href="#reflection"><span>06</span> Reflection</a></li>
             </ol>
             <a class="sidebar-back" href="#top">Back to top <span aria-hidden="true">↑</span></a>
           </nav>
         </aside>
 
-        <article id="case-content" class="case-article" aria-label="Pilet case study" tabindex="-1">
-          <section id="what-is-pilet" class="case-section" aria-labelledby="overview-title">
-            <p class="section-index">01 <span aria-hidden="true">/</span> Overview</p>
-            <h2 id="overview-title">What is Pilet?</h2>
-            <!-- Replace each data-placeholder paragraph with your final copy. -->
-            <p class="section-intro" data-placeholder>Introduce the product, who it’s for, and the problem it helps solve.</p>
-            <dl class="project-facts">
-              <div><dt>My role</dt><dd data-placeholder>To be added</dd></div>
-              <div><dt>The team</dt><dd data-placeholder>To be added</dd></div>
-              <div><dt>Timeline</dt><dd data-placeholder>To be added</dd></div>
+        <article id="case-content" class="case-article" aria-label="Pilet case study">
+          <!-- 01 PROBLEM -->
+          <section id="problem" class="case-section" aria-labelledby="problem-title">
+            <p class="section-index">01 <span aria-hidden="true">/</span> Problem and context</p>
+            <h2 id="problem-title">There’s a step in creative work with no tool for it.</h2>
+            <p class="section-intro">Before a script, album, or film has a form, its maker is already gathering a song, a poster, a color, a Wikipedia rabbit hole. That material ends up in screenshots, notes apps, and group chats. When the person sits down to work, the project’s world is scattered across all of them.</p>
+
+            <div class="problem-statement">
+              <span class="note-label">Problem statement</span>
+              <p>Students developing creative projects struggle to keep ideas and references from different sources together with the project they support, and to find and use them again when they return to work.</p>
+            </div>
+
+            <dl class="context-grid">
+              <div><dt>Who it’s for</dt><dd>U-M students actively making creative work, such as film, writing, music, or design, who save material from more than one app.</dd></div>
+              <div><dt>Why now</dt><dd>Inspiration arrives on the phone, inside other apps, and fades in seconds. Existing tools either save with no destination or assume the work already exists.</dd></div>
             </dl>
-            <!-- FINAL CONCEPT: Replace .media-placeholder with an <img> and descriptive alt text. -->
-            <figure class="case-figure concept-figure">
-              <div class="media-placeholder concept-placeholder" role="img" aria-label="Placeholder for the final Pilet concept screenshot">
-                <div class="artboard-meta" aria-hidden="true"><span>Pilet / Final concept</span><span>01</span></div>
-                <div class="artboard-center">
-                  <svg class="media-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="4.75" y="5.75" width="22.5" height="20.5" rx="2"/><circle cx="11" cy="12" r="2"/><path d="m5 22 7-7 5 5 4-4 6 6"/></svg>
-                  <span>Space for the final concept.</span>
-                  <small>Screenshot to come</small>
+
+            <div class="outcome-pair">
+              <div>
+                <span class="note-label">Desired product outcome</span>
+                <p>Students return to useful inspiration for an active project without searching across apps.</p>
+              </div>
+              <div>
+                <span class="note-label">Desired business outcome</span>
+                <p>Repeat use: the share of target users who create a pile, add to it, and return within a week.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 02 RESEARCH -->
+          <section id="research" class="case-section" aria-labelledby="research-title">
+            <p class="section-index">02 <span aria-hidden="true">/</span> Research and synthesis</p>
+            <h2 id="research-title">The friction was real for some people, and absent for others.</h2>
+            <p class="section-intro">We ran three semi-structured interviews about real, recent projects. We kept what people <em>did</em> separate from what they said about our idea, then compared patterns on a shared FigJam board. Alongside that, I mapped the competitive landscape and sized the market.</p>
+
+            <ul class="participants" aria-label="Interview participants">
+              <li>
+                <div class="participant-head"><span class="participant-id">P1</span><span class="urgency" data-level="high">High friction</span></div>
+                <p class="participant-project">Designing a game that helps autistic children practice everyday communication.</p>
+                <blockquote>“I need to go back and forth a lot of times.”</blockquote>
+                <p class="participant-note">Replayed interview recordings again and again to find one statement.</p>
+              </li>
+              <li>
+                <div class="participant-head"><span class="participant-id">P2</span><span class="urgency" data-level="high">High friction</span></div>
+                <p class="participant-project">Making a physical and digital poetry zine for a capstone.</p>
+                <blockquote>“Literally a place to dump everything.”</blockquote>
+                <p class="participant-note">Kept links in a Google Doc, gave up on Canva, and struggled to decide what belonged.</p>
+              </li>
+              <li>
+                <div class="participant-head"><span class="participant-id">P3</span><span class="urgency" data-level="low">Low friction</span></div>
+                <p class="participant-project">Building an AI study assistant as a side project.</p>
+                <blockquote>“I don’t want the organization problem to become the entire project.”</blockquote>
+                <p class="participant-note">Search and a README were enough. Wouldn’t install a new tool to try it.</p>
+              </li>
+            </ul>
+
+            <figure class="case-figure landscape-figure">
+              <div class="landscape" role="img" aria-label="Market map. On the left, collection tools such as Pinterest, Are.na and Notion save things with no destination. On the right, execution tools such as Final Draft, Logic and Figma assume the destination exists. Pilet sits in the gap between them: the step before the work has a form.">
+                <div class="landscape-zone">
+                  <span class="note-label">Collection tools</span>
+                  <p>Save, with no destination</p>
+                  <small>Pinterest · Are.na · Notion · Notes</small>
                 </div>
-                <span class="artboard-corner" aria-hidden="true"></span>
+                <div class="landscape-zone landscape-gap">
+                  <span class="note-label">The gap</span>
+                  <p>The step before the work has a form</p>
+                  <small>Pilet</small>
+                </div>
+                <div class="landscape-zone">
+                  <span class="note-label">Execution tools</span>
+                  <p>Assume the destination exists</p>
+                  <small>Final Draft · Logic · Premiere · Figma</small>
+                </div>
               </div>
-              <figcaption><span>Fig. 01</span> The final concept <span class="caption-status">Image to be added</span></figcaption>
+              <figcaption><span>Fig. 01</span> Every competitor wants to be where you save things. None wants to be the first thing you open when you sit down to make.</figcaption>
             </figure>
-          </section>
 
-          <section id="where-we-started" class="case-section" aria-labelledby="starting-title">
-            <p class="section-index">02 <span aria-hidden="true">/</span> The starting point</p>
-            <h2 id="starting-title">Where we started</h2>
-            <p class="section-intro" data-placeholder>Set the scene: the original idea and what your team believed needed to change.</p>
-            <div class="starting-notes">
-              <div><h3>The original idea</h3><p data-placeholder>What did you first set out to create?</p></div>
-              <div><h3>The perceived problem</h3><p data-placeholder>What problem did you believe existed?</p></div>
-              <div><h3>Our assumptions</h3><p data-placeholder>What were you taking for granted before speaking to customers?</p></div>
+            <div class="insight">
+              <span class="note-label">The insight we built on</span>
+              <p>The pain isn’t scattered references. That’s the symptom. The pain is losing the feeling of a project before you sit down to make it.</p>
             </div>
           </section>
 
-          <section id="customer-discovery" class="case-section" aria-labelledby="discovery-title">
-            <p class="section-index">03 <span aria-hidden="true">/</span> Customer discovery</p>
-            <h2 id="discovery-title">Customer discovery</h2>
-            <p class="section-intro" data-placeholder>Describe the people behind the research and how you made room for their experiences.</p>
-            <div class="research-notes">
-              <div><h3>Who we spoke with</h3><p data-placeholder>Add participant profiles, how you recruited them, and why their perspective mattered.</p></div>
-              <div><h3>How we listened</h3><p data-placeholder>Describe the interview format, setting, and how you captured the conversations.</p></div>
-            </div>
-            <div class="question-notes">
-              <h3>The questions we asked</h3>
-              <p data-placeholder>Add the key questions from your interview guide.</p>
-            </div>
-            <div class="research-pattern">
-              <span class="note-label">The recurring pattern</span>
-              <p data-placeholder>What kept coming up across interviews?</p>
-            </div>
-          </section>
+          <!-- 03 DECISIONS -->
+          <section id="decisions" class="case-section" aria-labelledby="decisions-title">
+            <p class="section-index">03 <span aria-hidden="true">/</span> Key decisions</p>
+            <h2 id="decisions-title">Four calls I made, and the evidence behind each one.</h2>
+            <p class="section-intro">Small samples make it easy to over-read results. My rule for the team was to let evidence narrow the scope, and to keep opinions about the product from posing as evidence that the problem exists.</p>
 
-          <section id="what-we-learned" class="case-section learning-section" aria-labelledby="learning-title">
-            <p class="section-index">04 <span aria-hidden="true">/</span> Learning &amp; changes</p>
-            <h2 id="learning-title">What we learned<br>and changed</h2>
-            <p class="section-intro" data-placeholder>Connect what people told you to a specific product decision. This is where the research becomes visible.</p>
-            <!-- Duplicate .decision-trail for each research-led decision. -->
-            <ol class="decision-trail" aria-label="From assumption to product decision">
-              <li><span class="decision-step">01 / We believed</span><p data-placeholder>Add an initial assumption.</p><span class="decision-arrow" aria-hidden="true">→</span></li>
-              <li><span class="decision-step">02 / We heard</span><p data-placeholder>Add the finding that challenged it.</p><span class="decision-arrow" aria-hidden="true">→</span></li>
-              <li><span class="decision-step">03 / We changed</span><p data-placeholder>Add the decision you made as a result.</p></li>
+            <ol class="decision-list">
+              <li>
+                <h3>Narrow the user</h3>
+                <p class="decision-what">From “U-M students” to mixed-media creatives with an active project.</p>
+                <dl>
+                  <div><dt>Evidence</dt><dd>P3 felt little friction and sat outside our segment. People who only collect images are already well served by Pinterest.</dd></div>
+                  <div><dt>Trade-off</dt><dd>A smaller market, estimated at 3.5–6M US iPhone users. Big enough to matter, focused enough to win.</dd></div>
+                </dl>
+              </li>
+              <li>
+                <h3>Separate behavior from opinion</h3>
+                <p class="decision-what">Concept reactions were logged apart from workflow evidence.</p>
+                <dl>
+                  <div><dt>Evidence</dt><dd>P2 asked for unlimited colored tags, but nothing in their actual workflow needed them.</dd></div>
+                  <div><dt>Trade-off</dt><dd>Custom tags stayed an idea rather than a priority. Tags also pull the product toward an archive, the opposite of what Pilet is for.</dd></div>
+                </dl>
+              </li>
+              <li>
+                <h3>Put sharing on hold <span class="pivot-tag">Pivot</span></h3>
+                <p class="decision-what">Private Pile Sharing moved from feature idea to lower-confidence bet.</p>
+                <dl>
+                  <div><dt>Evidence</dt><dd>P1 worked alone. P3 shared links on Discord without needing a dedicated tool.</dd></div>
+                  <div><dt>Trade-off</dt><dd>We kept privacy itself as a requirement, since people save honestly only when no one is watching. That became Test 3.</dd></div>
+                </dl>
+              </li>
+              <li>
+                <h3>Test the riskiest, not the easiest</h3>
+                <p class="decision-what">I consolidated 26 assumptions and picked three, with pass thresholds set before testing.</p>
+                <dl>
+                  <div><dt>Evidence</dt><dd>One assumption each for desirability, feasibility, and ethics: whether people would adopt it, whether it would work, and whether it would be safe.</dd></div>
+                  <div><dt>Trade-off</dt><dd>Usability and pricing went untested this round. They come after we know people want it.</dd></div>
+                </dl>
+              </li>
             </ol>
-          </section>
 
-          <section id="what-we-built" class="case-section" aria-labelledby="design-title">
-            <p class="section-index">05 <span aria-hidden="true">/</span> Design &amp; build</p>
-            <h2 id="design-title">What we designed<br>and built</h2>
-            <p class="section-intro" data-placeholder>Introduce the final solution, its key features, and why you chose to prioritize them.</p>
-            <div class="feature-note"><span class="note-label">The priorities</span><p data-placeholder>Which features made the cut? Connect each one to a customer need or research finding.</p></div>
-            <div class="prototype-grid">
-              <!-- PROTOTYPES: Replace each .media-placeholder with an <img loading="lazy">. -->
-              <figure class="case-figure">
-                <div class="media-placeholder prototype-placeholder" role="img" aria-label="Placeholder for the first Pilet prototype screenshot"><span class="screen-outline" aria-hidden="true"><span></span><span></span><span></span></span><span>Prototype 01</span><small>Screenshot to come</small></div>
-                <figcaption><span>Fig. 02</span> <span data-placeholder>Add a feature caption</span></figcaption>
-              </figure>
-              <figure class="case-figure">
-                <div class="media-placeholder prototype-placeholder alternate" role="img" aria-label="Placeholder for the second Pilet prototype screenshot"><span class="screen-outline" aria-hidden="true"><span></span><span></span><span></span></span><span>Prototype 02</span><small>Screenshot to come</small></div>
-                <figcaption><span>Fig. 03</span> <span data-placeholder>Add a feature caption</span></figcaption>
-              </figure>
-            </div>
-            <!-- DEMO: Replace .video-placeholder with <video controls preload="metadata" playsinline>.
-                 Add a <source>, a poster image, and a captions <track> for spoken content. -->
-            <figure class="case-figure demo-figure">
-              <div class="media-placeholder video-placeholder" role="img" aria-label="Placeholder for the Pilet demo video; no video has been added yet">
-                <span class="video-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3V9Z"/></svg></span>
-                <span>The product, in motion.</span><small>Demo video to come</small>
+            <figure class="case-figure">
+              <div class="assumption-map" role="img" aria-label="Assumption map. 26 assumptions across five categories: desirability 10, usability 8, feasibility 4, viability 2, ethical 2. One assumption each from desirability, feasibility and ethical was selected for testing.">
+                <div class="map-row"><span class="map-label">Desirability</span><span class="map-dots"><i class="picked"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="map-count">10</span></div>
+                <div class="map-row"><span class="map-label">Usability</span><span class="map-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="map-count">8</span></div>
+                <div class="map-row"><span class="map-label">Feasibility</span><span class="map-dots"><i class="picked"></i><i></i><i></i><i></i></span><span class="map-count">4</span></div>
+                <div class="map-row"><span class="map-label">Viability</span><span class="map-dots"><i></i><i></i></span><span class="map-count">2</span></div>
+                <div class="map-row"><span class="map-label">Ethical</span><span class="map-dots"><i class="picked"></i><i></i></span><span class="map-count">2</span></div>
               </div>
-              <figcaption><span>Demo</span> A walkthrough of the experience</figcaption>
+              <figcaption><span>Fig. 02</span> 26 assumptions by category. <span class="legend-picked">Filled</span> = chosen for testing.</figcaption>
             </figure>
           </section>
 
-          <section id="testing-outcomes" class="case-section" aria-labelledby="testing-title">
-            <p class="section-index">06 <span aria-hidden="true">/</span> Testing &amp; outcomes</p>
-            <h2 id="testing-title">Testing and outcomes</h2>
-            <p class="section-intro" data-placeholder>Explain how you tested the concept and what the results told you about your original assumptions.</p>
-            <div class="outcome-notes">
-              <div><h3><span class="outcome-symbol" aria-hidden="true">+</span> What worked</h3><p data-placeholder>Add the moments that validated the design, supported by feedback or observations.</p></div>
-              <div><h3><span class="outcome-symbol" aria-hidden="true">−</span> What didn’t</h3><p data-placeholder>Add the friction, surprises, and assumptions that didn’t hold up.</p></div>
-            </div>
-            <div class="question-notes"><h3>Back to the original assumptions</h3><p data-placeholder>Which assumptions were supported, which changed, and what remains unanswered?</p></div>
+          <!-- 04 SOLUTION -->
+          <section id="solution" class="case-section" aria-labelledby="solution-title">
+            <p class="section-index">04 <span aria-hidden="true">/</span> The solution</p>
+            <h2 id="solution-title">One pile per project. Saving costs almost nothing.</h2>
+            <p class="section-intro">Pilet is a private, phone-first space for each thing you’re making. You add references from any app through the iOS share sheet, and they appear as rich cards you recognize at a glance. You browse the pile like a studio wall instead of searching a list of links.</p>
+
+            <figure class="case-figure">
+              <div class="annotated">
+                <img class="product-shot" src="assets/pilet-board.jpg" width="760" height="1402" alt="A Pilet pile called mesosphere with 7 items in board view: a coral reef Wikipedia card, the Ponyo film poster, Radiohead’s Weird Fishes, a blue color palette, and a YouTube video. Tabs at the bottom switch between pile and clusters.">
+                <ol class="callouts">
+                  <li><h3>Share-sheet capture</h3><p>Save from TikTok, Instagram, Spotify, Letterboxd, the web, and 10 other sources without leaving the app you’re in.</p></li>
+                  <li><h3>Rich cards</h3><p>Posters, album art, palettes, and lead images. Seeing a card beats trying to remember a URL.</p></li>
+                  <li><h3>Pile and clusters</h3><p>Browse the whole pile like a studio wall, or group items into clusters. No setup needed.</p></li>
+                  <li><h3>Hide the image</h3><p>A song can belong to a project while its cover art clashes with the mood. You can hide the image and keep the reference.</p></li>
+                  <li><h3>Private by default</h3><p>…but nothing on screen said so. Test 3 caught this.</p></li>
+                </ol>
+              </div>
+              <figcaption><span>Fig. 03</span> A pile in board view, from the current build</figcaption>
+            </figure>
+
+            <figure class="case-figure">
+              <div class="cards-scroll" tabindex="0" role="region" aria-label="Card examples, scrollable"><img class="cards-shot" src="assets/pilet-cards.jpg" width="1800" height="514" loading="lazy" alt="Four Pilet cards: a YouTube video, a note titled short story concept, the Spotify track Pink + White, and the film Past Lives from Letterboxd with the note: the color palette in every outdoor scene."></div>
+              <figcaption><span>Fig. 04</span> Every source becomes a recognizable card, and you can add a note on why you saved it</figcaption>
+            </figure>
+
+            <figure class="case-figure dump-figure">
+              <video class="dump-video" src="assets/pilet-dump.mp4" poster="assets/pilet-dump-poster.jpg" width="540" height="994" autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of the Dump: items saved from the share sheet wait to be shuffled for later or sent to a pile."></video>
+              <div class="dump-copy">
+                <span class="note-label">The Dump</span>
+                <p>Anything saved in a hurry lands here. Send it to a pile now, or shuffle it for later. The empty state is the win, not a badge count to clear.</p>
+              </div>
+              <figcaption><span>Fig. 05</span> Sorting the Dump: “4 items need a home”</figcaption>
+            </figure>
+
+            <p class="solution-link"><a class="text-link" href="https://pilet.app/" target="_blank" rel="noreferrer">See Pilet at pilet.app <span aria-hidden="true">↗</span></a></p>
           </section>
 
-          <section id="contributions" class="case-section reflection-section" aria-labelledby="reflection-title">
-            <p class="section-index">07 <span aria-hidden="true">/</span> My reflections</p>
-            <h2 id="reflection-title">My contributions<br>and reflections</h2>
-            <p class="section-intro" data-placeholder>Make your role in the work clear, then reflect on what the process taught you.</p>
+          <!-- 05 TESTING -->
+          <section id="testing" class="case-section" aria-labelledby="testing-title">
+            <p class="section-index">05 <span aria-hidden="true">/</span> Testing and outcomes</p>
+            <h2 id="testing-title">One clear pass, one clear miss, and one honest “not yet.”</h2>
+            <p class="section-intro">We set each threshold before running the test, and reported against it even when the result was uncomfortable.</p>
+
+            <ol class="results">
+              <li class="result" data-verdict="supported">
+                <div class="result-head"><span class="result-type">Feasibility · Capture</span><span class="verdict">Supported</span></div>
+                <h3>Shared items keep their source and preview.</h3>
+                <div class="save-grid" role="img" aria-label="42 of 42 save attempts succeeded">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+                <p class="result-stat"><strong>42 / 42</strong> saves intact: 3 testers × 14 item types. The bar was 9 in 10.</p>
+              </li>
+              <li class="result" data-verdict="failed">
+                <div class="result-head"><span class="result-type">Ethical · Organize</span><span class="verdict">Not supported</span></div>
+                <h3>People can tell whether a pile is private.</h3>
+                <p class="result-stat"><strong>0 / 3</strong> testers could tell the pile was private.</p>
+                <p>The build had no visibility indicator and no sharing control. Being private by default doesn’t reassure anyone if the screen never says so. With 3 testers instead of the planned 5, this result is directional.</p>
+              </li>
+              <li class="result" data-verdict="inconclusive">
+                <div class="result-head"><span class="result-type">Desirability · Adopt</span><span class="verdict">Inconclusive</span></div>
+                <h3>Students will choose Pilet over Pinterest or Notes.</h3>
+                <p class="result-stat"><strong>15</strong> waitlist sign-ups · <strong>3</strong> positive demo reactions</p>
+                <p>That shows interest, not a switch. We didn’t run the planned interviews, so I didn’t count interest as adoption.</p>
+              </li>
+            </ol>
+
+            <div class="outcome-check">
+              <span class="note-label">Back to the desired outcomes</span>
+              <dl>
+                <div><dt>Product outcome</dt><dd><span class="status-chip">Partly met</span> Fast capture is proven. Whether people come back to their piles is not, because we didn’t measure it.</dd></div>
+                <div><dt>Business outcome</dt><dd><span class="status-chip">Not yet measurable</span> The waitlist is the top of the funnel. Weekly return can be tracked once those 15 people get access.</dd></div>
+              </dl>
+              <p class="call"><strong>The call:</strong> continue with Pilet and make targeted changes. Don’t rethink the problem.</p>
+            </div>
+          </section>
+
+          <!-- 06 REFLECTION -->
+          <section id="reflection" class="case-section reflection-section" aria-labelledby="reflection-title">
+            <p class="section-index">06 <span aria-hidden="true">/</span> Reflection</p>
+            <h2 id="reflection-title">What I owned, and what I’d do differently.</h2>
+
             <div class="reflection-notes">
-              <div><span class="note-label">My contribution</span><p data-placeholder>What did you personally research, decide, design, or build?</p></div>
-              <div><span class="note-label">If I started again</span><p data-placeholder>What would you approach differently, and why?</p></div>
-              <div><span class="note-label">What comes next</span><p data-placeholder>Add the next steps for Pilet and the questions you still want to explore.</p></div>
+              <div>
+                <span class="note-label">My contribution</span>
+                <ul>
+                  <li>Framed the problem space, target user, and desired product and business outcomes.</li>
+                  <li>Set the interview approach and kept behavior separate from opinion in our synthesis.</li>
+                  <li>Wrote the opportunity report: competitors, market sizing, and three solution ideas.</li>
+                  <li>Consolidated 26 assumptions, chose what to test, and wrote the plans and thresholds.</li>
+                  <li>Turned the results into the continue-and-change decision and the next steps.</li>
+                </ul>
+              </div>
+              <div>
+                <span class="note-label">If I started again</span>
+                <ul>
+                  <li><strong>Test the core insight first.</strong> “Losing the feeling” is the bet everything rests on, and we never tested it directly.</li>
+                  <li><strong>Recruit inside the segment.</strong> P3 was a useful contrast, but one of three interviews spent outside the target is expensive.</li>
+                  <li><strong>Protect the sample size.</strong> Two tests ran with 3 people instead of 5. I’d lock in recruiting before the test week.</li>
+                </ul>
+              </div>
+              <div>
+                <span class="note-label">What comes next</span>
+                <ul>
+                  <li>Add a visible privacy indicator and a share-with-one-person control, then rerun Test 3 with 5 students.</li>
+                  <li>Give the 15 waitlist sign-ups access and track who creates a pile, adds to it, and returns within a week.</li>
+                  <li>Run the five adoption interviews we planned, against current tools.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="credits">
+              <span class="note-label">Credits</span>
+              <p>This was a team project, presented individually. Thanks to <strong>Orion</strong>, who ran project management, conducted an interview, and helped with product testing, and to <strong>Saran Ramesh</strong>, who interviewed participants and recruited testers. <!-- Add the other teammates and link to their portfolios here. --></p>
+              <p class="ai-note">We used ChatGPT to help organize findings and draft documents. All interviews, tests, and results were the team’s own.</p>
             </div>
           </section>
         </article>
@@ -173,7 +362,7 @@
 
       <footer class="case-footer">
         <div><p class="case-eyebrow">Thanks for reading</p><p>There’s more to explore.</p></div>
-        <a class="footer-link" href="index.html#work">Back to selected work <span aria-hidden="true">↗</span></a>
+        <a class="footer-link" href="index.html#work">Back to selected work <span aria-hidden="true">→</span></a>
       </footer>
       <div class="case-colophon"><a href="index.html">Nikayel Jamal</a><span>Pilet / Case Study</span><a href="#top">Back to top ↑</a></div>
     </main>
