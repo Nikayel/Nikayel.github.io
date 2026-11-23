@@ -171,25 +171,13 @@
 
 /* 04 Solution */
 .annotated { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 48px; align-items: start; padding: 32px; border: 1px solid var(--case-line); border-radius: 4px; background: var(--case-surface); }
-.phone { display: flex; flex-direction: column; gap: 12px; aspect-ratio: 9 / 18; padding: 22px 14px 14px; border: 1px solid #cfcec4; border-radius: 30px; background: var(--case-paper); box-shadow: 0 18px 40px -26px rgba(37, 38, 34, 0.5); }
-.phone-bar { display: flex; flex-direction: column; padding-inline: 4px; }
-.phone-bar span { font-size: 20px; letter-spacing: -0.04em; }
-.phone-bar small { color: var(--case-muted); font-size: 11px; }
-.phone-toggle { display: flex; gap: 4px; padding: 3px; border-radius: 6px; background: var(--case-surface); font-size: 11px; }
-.phone-toggle span { flex: 1; padding: 4px; border-radius: 4px; color: var(--case-muted); text-align: center; }
-.phone-toggle .on { background: #fff; color: var(--case-ink); }
-.phone-board { display: grid; flex: 1; grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr; gap: 7px; }
-.mini { display: block; border-radius: 4px; background: #fff; border: 1px solid #e3e2da; }
-.mini-film { grid-row: span 2; background: linear-gradient(160deg, #3a5a40 0%, #7a9e7e 45%, #d9a7c7 100%); }
-.mini-song { background: linear-gradient(135deg, #252622, #5b4b8a); }
-.mini-palette { display: grid; grid-template-columns: repeat(3, 1fr); overflow: hidden; }
-.mini-palette i:nth-child(1) { background: #2e3b2f; }
-.mini-palette i:nth-child(2) { background: #e9c46a; }
-.mini-palette i:nth-child(3) { background: #d9a7c7; }
-.mini-note { background: repeating-linear-gradient(#fffbea 0 9px, #ece6c8 9px 10px); }
-.mini-link { background: linear-gradient(#e7e6df 0 45%, #fff 45%); }
-.mini-photo { background: linear-gradient(200deg, #b9b2a3, #6f6a5f); }
-.phone-dump { padding: 9px; border-radius: 8px; background: var(--case-ink); color: var(--case-paper); font-size: 11px; text-align: center; }
+.product-shot { display: block; width: 100%; height: auto; border-radius: 26px; box-shadow: 0 18px 40px -26px rgba(37, 38, 34, 0.5); }
+.cards-shot { border: 1px solid var(--case-line); }
+.cards-scroll { overflow-x: auto; border-radius: 4px; }
+.dump-figure { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 16px 40px; align-items: center; padding: 32px; border: 1px solid var(--case-line); border-radius: 4px; background: var(--case-surface); }
+.case-figure .dump-video { border-radius: 22px; box-shadow: 0 18px 40px -26px rgba(37, 38, 34, 0.5); }
+.dump-copy p { max-width: 420px; margin: 12px 0 0; font-size: 18px; line-height: 1.5; letter-spacing: -0.02em; }
+.dump-figure figcaption { grid-column: 2; margin-top: 0; }
 .callouts { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; counter-reset: callout; }
 .callouts li { position: relative; padding: 16px 0 16px 40px; border-top: 1px solid var(--case-line); counter-increment: callout; }
 .callouts li:first-child { border-top: 0; padding-top: 0; }
@@ -276,7 +264,11 @@
   .landscape { grid-template-columns: 1fr; }
   .landscape-gap { margin: 0 -1px; }
   .annotated { grid-template-columns: 1fr; justify-items: center; }
-  .phone { width: 220px; }
+  .case-figure .product-shot { width: 240px; }
+  .case-figure .cards-shot { width: 760px; max-width: none; }
+  .dump-figure { grid-template-columns: 1fr; justify-items: center; padding: 24px; }
+  .case-figure .dump-video { width: 220px; }
+  .dump-figure figcaption { grid-column: auto; }
   .callouts { width: 100%; }
   .outcome-check { padding: 22px 20px; }
   .outcome-check dl > div { grid-template-columns: 1fr; gap: 6px; }
