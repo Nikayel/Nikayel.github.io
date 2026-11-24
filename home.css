@@ -61,6 +61,18 @@ main:focus { outline: none; }
 .session-tests .pass { color: #2f6b3f; }
 .session-tests .fail { color: #a63a2a; }
 
+/* WatanHub impact panel */
+.impact { position: sticky; top: 96px; overflow: hidden; border: 1px solid var(--ink); border-radius: 10px; background: var(--card); box-shadow: 0 30px 50px -38px rgba(37, 38, 34, 0.6); }
+.impact-hero { padding: 28px 20px 24px; border-bottom: 1px solid var(--line); background: #fff6d6; }
+.impact-number { margin: 0; font-size: clamp(64px, 8vw, 96px); line-height: 0.9; letter-spacing: -0.06em; }
+.impact-label { margin: 12px 0 0; font-size: 16px; letter-spacing: -0.015em; }
+.impact-rows { margin: 0; }
+.impact-rows > div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--line); }
+.impact-rows > div:last-child { border-bottom: 0; }
+.impact-rows dt { color: var(--muted); font-family: var(--mono); font-size: 12px; line-height: 1.9; }
+.impact-rows dd { margin: 0; font-size: 15px; line-height: 1.5; }
+.impact-rows [dir="rtl"] { font-size: 16px; }
+
 /* Case study feature */
 .feature-case { margin-top: 0; }
 .feature-case:hover h3 { text-decoration: underline; text-decoration-color: var(--maize); text-decoration-thickness: 3px; text-underline-offset: 8px; }
@@ -78,6 +90,7 @@ main:focus { outline: none; }
 /* More engineering */
 .more-title { margin: 32px 0 20px; padding-top: 40px; border-top: 1px solid var(--line); }
 .more-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+.more-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .mini { display: flex; flex-direction: column; padding: 22px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
 .mini h4 { margin: 14px 0 0; font-size: 19px; font-weight: 400; line-height: 1.25; letter-spacing: -0.025em; }
 .mini > p:not(.feature-meta) { margin: 12px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
@@ -107,7 +120,7 @@ main:focus { outline: none; }
   .hero { grid-template-columns: 1fr; min-height: 0; gap: 24px; padding: 56px 0 40px; }
   .layers-scene { height: 400px; }
   .feature { grid-template-columns: 1fr; gap: 32px; }
-  .session { position: static; }
+  .session, .impact { position: static; }
   .more-grid { grid-template-columns: 1fr; }
 }
 
@@ -121,6 +134,7 @@ main:focus { outline: none; }
   .contact { padding: 64px 0 80px; }
   .section-head { margin-bottom: 32px; }
   .feature-facts > div { grid-template-columns: 1fr; gap: 6px; }
+  .impact-rows > div { grid-template-columns: 1fr; gap: 2px; }
   .case-stats dd { font-size: 34px; }
   .toolkit-grid, .refs { grid-template-columns: 1fr; gap: 32px; }
   .contact .button-primary { font-size: 13px; }
